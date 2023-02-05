@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @EnableJpaRepositories
 public interface HotelReservationRepository extends JpaRepository<Hotel, Integer> {
-    List<Hotel> findById(int id);
+    List<Hotel> findByCity(String city);
 }
