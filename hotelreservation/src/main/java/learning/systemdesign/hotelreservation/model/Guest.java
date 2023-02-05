@@ -6,10 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class RoomTypes {
+public class Guest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     int id;
 
-    String type;
+    String name;
+
+    String address;
+
+    String phoneNumber;
 }

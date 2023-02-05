@@ -1,9 +1,12 @@
 package learning.systemdesign.hotelreservation.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 @Entity
-public class Hotels {
+@Table(name = "Hotels")
+public class Hotel {
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     int id;
 
     String name;
