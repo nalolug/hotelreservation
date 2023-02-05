@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -15,7 +16,7 @@ public class HotelReservationController {
     HotelReservationRepository hotelReservationRepository;
 
     @PostMapping("/reservation") //String city, String startDate, String endDate, int userId
-    Optional<Hotel> searchAvailableRooms() {
+    List<Hotel> searchAvailableRooms() {
         return hotelReservationRepository.findById(0);
     }
 }

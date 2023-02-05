@@ -1,9 +1,12 @@
 package learning.systemdesign.hotelreservation.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "rooms")
+@Setter @Getter
 public class Room {
     @Column(name = "room_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,9 +19,11 @@ public class Room {
     @Column(name = "room_name")
     String roomName;
 
-    @Column(name = "hotel_id")
-    String hotelId;
+    @JoinColumn(name = "hotel_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    Hotel hotel;
 
-    @Column(name = "room_type_id")
-    int roomType;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "room_type_id")
+    RoomType roomType;
 }

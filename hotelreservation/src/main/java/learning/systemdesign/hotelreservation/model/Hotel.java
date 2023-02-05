@@ -1,9 +1,14 @@
 package learning.systemdesign.hotelreservation.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Table(name = "hotels")
+@Setter @Getter
 public class Hotel {
     @Column(name = "hotel_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,4 +32,7 @@ public class Hotel {
 
     @Column(name = "hotel_pincode")
     int pinCode;
+
+    @OneToMany(targetEntity = Room.class)
+    List<Room> rooms;
 }
