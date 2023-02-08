@@ -8,14 +8,14 @@ Fix sql join statements - done
 Handle race condition ( integrate redis )
 
 
-#Functional requirements
+# Functional requirements
 Users can find rooms availability by city and room type.
 Users can book a room
 System should support concurrency ( more than 2 users can book same room )
 Users can give ratings/reviews
 Users can select reviews of a hotel
 
-#Non functional requirements
+# Non functional requirements
 Highly available
 Highly scalable
 High concurrancy
@@ -31,7 +31,7 @@ Consistent
 	In progress
 
 
-#SQL tables
+# SQL tables
 
 create database hotelreservationsystem;
 show databases;
