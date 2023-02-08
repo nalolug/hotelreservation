@@ -9,6 +9,17 @@ import java.util.List;
 
 @EnableJpaRepositories
 public interface HotelReservationRepository extends JpaRepository<Hotel, Integer> {
-    @Query(value = "SELECT h FROM Hotel h WHERE h.city = ?1")
-    List<Hotel> findByCity(String city);
+
+    @Query(value =
+            "SELECT * FROM hotels " +
+                    " WHERE hotel_city = ?1 and hotel_id " +
+                    " IN (SELECT hotel_id FROM rooms " +
+                    " WHERE room_type_id " +
+                    " IN (SELECT room_type_id FROM room_types WHERE room_type = ?2) " +
+                    " AND room_id " +
+                    " NOT IN (SELECT room_id FROM reservations WHERE in_date between ?3 and ?4" +
+                    " OR out_date between ?3 and ?4" +
+                    " OR in_date < ?3 and out_date > ?4)" +
+                    ")", nativeQuery = true)
+    List<Hotel> findAllHotelsWithAvailableRooms(String city, String type, String start, String end);
 }

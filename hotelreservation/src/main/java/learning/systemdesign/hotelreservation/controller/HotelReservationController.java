@@ -13,9 +13,9 @@ public class HotelReservationController {
     @Autowired
     HotelReservationRepository hotelReservationRepository;
 
-    @GetMapping("/reservation") //String city, String startDate, String endDate, int userId
-    List<Hotel> searchAvailableRooms(@RequestParam String city) {
-        System.out.println("city name: " + city);
-        return hotelReservationRepository.findByCity(city);
+    @GetMapping("/hotel/by-city")
+    List<Hotel> searchAvailableRooms(@RequestParam String city, @RequestParam String type, @RequestParam String start, @RequestParam String end) {
+        System.out.println("city name: " + city + " type: " + type + " start:"+ start + " end:" + end);
+        return hotelReservationRepository.findAllHotelsWithAvailableRooms(city, type, start, end);
     }
 }

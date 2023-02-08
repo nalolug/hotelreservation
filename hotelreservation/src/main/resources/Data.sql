@@ -82,11 +82,12 @@ INSERT INTO `rooms` VALUES(5, 3, 'grand-double-1', 1, 1);
 /*1 triple in grand kakateeya  */
 INSERT INTO `rooms` VALUES(6, 4, 'grand kakateeya-triple-1', 1, 2);
 
-/*1 triple in leela palace */
+/*1 single in leela palace */
 INSERT INTO `rooms` VALUES(7, 4, 'leela palace-single-1', 2, 0);
 
 INSERT INTO `reservations` VALUES (0, '2023-02-04 16:21:00', '2023-02-05 11:00:00', '2023-02-06 11:00:00', 0, 0);
 INSERT INTO `reservations` VALUES (1, '2023-02-04 16:21:00', '2023-02-05 11:00:00', '2023-02-06 11:00:00', 2, 1);
+INSERT INTO `reservations` VALUES (2, '2023-02-04 16:21:00', '2023-02-05 11:00:00', '2023-02-06 11:00:00', 7, 2);
 
 
 
