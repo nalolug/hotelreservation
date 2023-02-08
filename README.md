@@ -21,13 +21,14 @@ Highly scalable
 High concurrancy
 Consistent 
 
-#API
+# API
+localhost:8080//hotel/by-city?city=bangalore&type=single&start=2023-02-07 11:00:00&end=2023-02-08 11:00:00
 /hotel/by-city 
 {
 	city, from, to, typeOfroom
 } 
 
-#HLD
+# HLD
 	In progress
 
 
